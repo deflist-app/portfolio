@@ -52,9 +52,9 @@ export const caseStudies: Record<string, CaseStudy> = {
   porcolab: {
     slug: "porcolab",
     overview:
-      "PorcoLab é um projeto de análise de dados do Brasileirão que vai além das estatísticas básicas. O pipeline coleta, valida e armazena dados de todas as 24 temporadas da era dos pontos corridos (2003–2026), permitindo comparações históricas que não existem em nenhuma outra plataforma pública.",
+      "PorcoLab é uma plataforma de análise de dados do futebol brasileiro com duas seções: Brasileirão Analytics, que cobre todas as 24 temporadas da era dos pontos corridos (2003–2026) com comparações históricas inéditas, e Histórico Arenas, que traz estatísticas das arenas novas e reformadas após a Copa do Mundo de 2014.",
     problem:
-      "Dados do futebol brasileiro são fragmentados: a temporada atual exige scraping, temporadas antigas usam APIs diferentes, nomes de clubes mudam ao longo dos anos e jogos de 2020 foram disputados em 2021. Construir uma base unificada e confiável exige tratamento cuidadoso.",
+      "Dados do futebol brasileiro são fragmentados: a temporada atual exige scraping, temporadas antigas usam APIs diferentes, nomes de clubes mudam ao longo dos anos e jogos de 2020 foram disputados em 2021. Além disso, os dados das arenas pós-Copa não estavam consolidados em nenhuma plataforma pública.",
     architecture: [
       "Pipeline Python: api_client.py (scraping) → classificacao.py (cálculos) → consolidar_base.py (unificação) → supabase_repository.py (persistência)",
       "Catálogo de clubes para normalização de nomes entre fontes e temporadas",
@@ -85,9 +85,9 @@ export const caseStudies: Record<string, CaseStudy> = {
           "Scraping da API esportiva para a temporada 2026, com validação automática dos resultados, consolidação com a base histórica e upsert no Supabase. Executável com um único comando.",
       },
       {
-        title: "Seção Arenas",
+        title: "Histórico Arenas",
         description:
-          "Páginas dedicadas a estádios e arenas do futebol brasileiro, com informações visuais e dados contextuais de cada venue.",
+          "Seção dedicada às arenas novas e reformadas após a Copa do Mundo de 2014. Estatísticas de capacidade, público, jogos e desempenho dos mandantes em cada venue.",
       },
     ],
   },

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import type { CaseStudy } from "@/data/case-studies";
+import { useApp } from "@/components/providers";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -21,8 +22,9 @@ export default function ProjectContent({
   project: Project;
   study: CaseStudy;
 }) {
+  const { t } = useApp();
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="mx-auto max-w-4xl px-6 py-12">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -47,7 +49,7 @@ export default function ProjectContent({
               strokeLinejoin="round"
             />
           </svg>
-          Voltar
+          {t.caseStudy.back}
         </Link>
       </motion.div>
 
@@ -79,7 +81,7 @@ export default function ProjectContent({
           rel="noopener noreferrer"
           className="rounded-lg border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent/20"
         >
-          Ver app ao vivo &rarr;
+          {t.caseStudy.liveApp} &rarr;
         </a>
         {project.github && (
           <a
@@ -100,7 +102,7 @@ export default function ProjectContent({
         className="mt-12"
       >
         <h2 className="text-sm font-semibold uppercase tracking-widest text-accent">
-          Visao geral
+          {t.caseStudy.overview}
         </h2>
         <p className="mt-3 text-muted leading-relaxed">{study.overview}</p>
       </motion.section>
@@ -112,7 +114,7 @@ export default function ProjectContent({
         className="mt-10"
       >
         <h2 className="text-sm font-semibold uppercase tracking-widest text-accent">
-          Desafio
+          {t.caseStudy.challenge}
         </h2>
         <p className="mt-3 text-muted leading-relaxed">{study.problem}</p>
       </motion.section>
@@ -126,7 +128,7 @@ export default function ProjectContent({
         className="mt-10"
       >
         <h2 className="text-sm font-semibold uppercase tracking-widest text-accent">
-          Stack tecnica
+          {t.caseStudy.stack}
         </h2>
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
@@ -149,7 +151,7 @@ export default function ProjectContent({
         className="mt-10"
       >
         <h2 className="text-sm font-semibold uppercase tracking-widest text-accent">
-          Arquitetura
+          {t.caseStudy.architecture}
         </h2>
         <div className="mt-4 space-y-3">
           {study.architecture.map((item, i) => (
@@ -170,7 +172,7 @@ export default function ProjectContent({
         className="mt-10"
       >
         <h2 className="text-sm font-semibold uppercase tracking-widest text-accent">
-          Funcionalidades
+          {t.caseStudy.features}
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {study.features.map((feat, i) => (
@@ -201,7 +203,7 @@ export default function ProjectContent({
         className="mt-10"
       >
         <h2 className="text-sm font-semibold uppercase tracking-widest text-accent">
-          Destaques
+          {t.caseStudy.highlights}
         </h2>
         <ul className="mt-4 space-y-2">
           {project.highlights.map((h) => (
@@ -223,7 +225,7 @@ export default function ProjectContent({
           href="/#projetos"
           className="rounded-lg border border-border bg-card px-6 py-3 text-sm font-medium text-foreground transition hover:border-accent/40 hover:text-accent"
         >
-          &larr; Ver todos os projetos
+          &larr; {t.caseStudy.allProjects}
         </Link>
       </motion.div>
     </div>

@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: "PorcoLab",
     tagline: "Análise histórica do Brasileirão",
     description:
-      "Plataforma de dados do Campeonato Brasileiro na era dos pontos corridos (2003–presente). Pipeline em Python que coleta, trata e armazena dados de todas as temporadas, com frontend interativo para exploração.",
+      "Plataforma de dados do Campeonato Brasileiro (2003–presente). Duas seções: Brasileirão Analytics (classificação, comparações, gráficos históricos) e Histórico Arenas (estatísticas das arenas reformadas e construídas pós-Copa).",
     url: "https://porco-lab.vercel.app",
     github: "https://github.com/deflist-app/PorcoLab",
     stack: [
@@ -61,6 +61,7 @@ export const projects: Project[] = [
       "Classificação por rodada de qualquer temporada",
       "Comparação de desempenho entre temporadas",
       "Gráficos históricos: títulos, pontos, sequências",
+      "Histórico Arenas: estatísticas das arenas pós-Copa",
       "Atualização automática da temporada 2026",
     ],
   },
