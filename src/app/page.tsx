@@ -19,19 +19,19 @@ const fadeUp = {
 function Hero() {
   const { t } = useApp();
   return (
-    <section className="flex flex-col items-center px-6 pt-10 pb-8 text-center">
+    <section className="flex flex-col items-center px-6 pt-16 pb-10 text-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="mb-4 h-32 w-32 overflow-hidden rounded-full border-2 border-border"
+        className="mb-5 h-44 w-44 overflow-hidden rounded-full border-2 border-border shadow-lg"
       >
         <Image
           src="/profile.jpeg"
           alt="Brunno Seneguini"
-          width={128}
-          height={128}
-          className="h-full w-full object-cover"
+          width={176}
+          height={176}
+          className="h-full w-full object-cover object-top"
           priority
         />
       </motion.div>
@@ -139,7 +139,7 @@ function Projects() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="text-sm font-semibold uppercase tracking-widest text-accent"
+        className="text-base font-semibold uppercase tracking-widest text-accent"
       >
         {t.projects.label}
       </motion.h2>
@@ -183,13 +183,13 @@ function About() {
   ];
 
   return (
-    <section id="sobre" className="border-t border-border">
+    <section id="sobre">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-sm font-semibold uppercase tracking-widest text-accent"
+          className="text-base font-semibold uppercase tracking-widest text-accent"
         >
           {t.about.label}
         </motion.h2>
@@ -275,13 +275,13 @@ function Contact() {
   ];
 
   return (
-    <section id="contato" className="border-t border-border">
+    <section id="contato">
       <div className="mx-auto max-w-5xl px-6 py-12 text-center">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-sm font-semibold uppercase tracking-widest text-accent"
+          className="text-base font-semibold uppercase tracking-widest text-accent"
         >
           {t.contact.label}
         </motion.h2>
@@ -330,11 +330,21 @@ function Contact() {
 
 export default function Home() {
   return (
-    <>
+    <div className="relative">
+      <div className="fixed inset-0 -z-10">
+        <Image
+          src="/hero-bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-background/85 backdrop-blur-[2px]" />
+      </div>
       <Hero />
       <Projects />
       <About />
       <Contact />
-    </>
+    </div>
   );
 }
