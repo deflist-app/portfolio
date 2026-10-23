@@ -27,7 +27,7 @@ function Hero() {
         className="mb-5 h-44 w-44 overflow-hidden rounded-full border-2 border-border shadow-lg"
       >
         <Image
-          src="/profile.jpeg"
+          src="/profile.jpg"
           alt="Brunno Seneguini"
           width={176}
           height={176}
